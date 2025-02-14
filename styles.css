@@ -1,0 +1,574 @@
+:root {
+  --primary-color: #2196F3;
+  --text-color: #333;
+  --bg-color: #f5f5f5;
+  --card-bg: #ffffff;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.settings-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.settings-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  /*margin-bottom: 10px;*/
+}
+
+button {
+  /*width: 100%;*/
+  padding: 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.inscription {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.inscription-card {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  margin: 0 0 10px 0;
+  color: var(--primary-color);
+}
+
+.card-meta {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card-preview {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.card-preview iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  background: #f8f8f8;
+}
+
+.markdown-btn {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.markdown-btn:hover {
+  background-color: #1976D2;
+}
+
+@media (max-width: 1024px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+}
+
+.address-bar {
+  flex: 1;
+  max-width: 600px;
+}
+
+.address-input-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.address-input-wrapper:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.wallet-icon {
+  color: rgba(255, 255, 255, 0.8);
+  flex-shrink: 0;
+}
+
+.address-input {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  padding: 0;
+}
+
+.address-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.address-input:focus {
+  outline: none;
+}
+
+/* 选项卡和列表容器 */
+.tabs-container {
+  min-width: 800px;
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  gap: 24px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* 选项卡样式 */
+.tabs {
+  width: 120px;
+  flex: 0 0 120px;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tab {
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-color);
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.tab.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.tab:hover:not(.active) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* 内容区域 */
+.tab-content {
+  flex: 1;
+  min-width: 600px;
+}
+
+/* 列表样式 */
+.history-list,
+.favorites-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.history-item,
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.history-content,
+.favorite-content {
+  flex: 1;
+  padding-right: 16px;
+  width: calc(100% - 80px); /* 减去操作按钮的宽度 */
+}
+
+.history-address,
+.favorite-address {
+  color: var(--primary-color);
+  font-size: 14px;
+  word-break: break-all;
+  margin-bottom: 4px;
+  text-decoration: none;
+  display: block;
+}
+
+.history-address:hover,
+.favorite-address:hover {
+  text-decoration: underline;
+}
+
+.history-time,
+.favorite-name {
+  color: #666;
+  font-size: 13px;
+}
+
+/* 按钮样式 */
+.history-actions {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto;
+  width: 80px; /* 固定操作按钮区域宽度 */
+  justify-content: flex-end;
+}
+
+.favorite-btn,
+.history-delete,
+.favorite-delete {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.favorite-btn:hover {
+  color: #ffc107;
+}
+
+.history-delete:hover,
+.favorite-delete:hover {
+  color: #f44336;
+}
+
+/* 空内容样式 */
+.no-content {
+  padding: 12px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Logo链接样式 */
+.logo-link {
+  color: #FFD700; /* 使用金色，使其更明显 */
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: opacity 0.2s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+/* 顶部导航栏样式 */
+.header {
+  background: var(--primary-color);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-container {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#btcAddressInput {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  background: rgba(255,255,255,0.9);
+  color: var(--text-color);
+}
+
+#btcAddressInput::placeholder {
+  color: #999;
+}
+
+#btcAddressInput:focus {
+  outline: none;
+  background: white;
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  color: white;
+  padding: 8px;
+  margin-left: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.settings-btn:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-logo {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.header-logo:hover {
+  opacity: 0.8;
+}
+
+.header-nav-link {
+  color: var(--text-color);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header-nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* 铭文卡片网格 */
+.inscriptions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 铭文卡片 */
+.inscription-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.inscription-card:hover {
+  transform: translateY(-2px);
+}
+
+.inscription-content {
+  position: relative;
+  padding-bottom: 100%;
+  background: #f5f5f5;
+}
+
+.inscription-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inscription-info {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.inscription-number {
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.view-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.view-link:hover {
+  opacity: 0.8;
+}
+
+/* 加载状态 */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+/* 错误状态 */
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #f44336;
+}
+
+/* 无内容状态 */
+.no-content {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+/* 铭文内容 iframe */
+.inscription-content iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+/* 页脚样式 */
+.site-footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  background-color: var(--card-bg);
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+.footer-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-content a:hover {
+  opacity: 0.8;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .site-footer {
+    margin-top: 20px;
+    padding: 15px 0;
+  }
+  
+  .footer-content {
+    font-size: 12px;
+  }
+}
